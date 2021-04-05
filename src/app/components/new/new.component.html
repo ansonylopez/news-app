@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header class="ion-no-border">
+    <ion-card-subtitle>
+      <span class="text-primary"> {{ i + 1 }}. </span>
+      <span class="new-source-name">{{ new.source.name }}</span>
+
+      <div class="more-new">
+        <ion-button (click)="launchMenu()" fill="clear">
+          <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+    </ion-card-subtitle>
+    <ion-card-title (click)="openNew()">{{ new.title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-img (click)="openNew()" *ngIf="new.urlToImage" class="animated fadeIn fast" [src]="new.urlToImage"></ion-img>
+
+  <ion-card-content>
+    <p>
+      {{ new.description }}
+    </p>
+  </ion-card-content>
+
+</ion-card>
